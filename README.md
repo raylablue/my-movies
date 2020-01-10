@@ -1,8 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## My Movies
 
-In the project directory, you can run:
+This project utilizes the ombdAPI, redux, and local storage to search, view, and favorite movies.
 
 ### `npm start`
 
