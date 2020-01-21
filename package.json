@@ -1,4 +1,5 @@
 {
+  "homepage": "https://rachel-blue.github.io/my-movies/",
   "name": "my-movies",
   "version": "0.1.0",
   "private": true,
@@ -14,15 +15,18 @@
     "FontAwesome": "latest",
     "bootstrap": "^4.4.1",
     "eslint-plugin-jest-dom": "^1.4.2",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-fontawesome": "^1.7.1",
+    "react-particles-js": "^2.7.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -56,8 +60,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "gh-pages": "^2.1.1"
+      "pre-commit": "npm run lint"
     }
   }
 }

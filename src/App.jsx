@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Gallery from './components/Pages/PageGallery';
 import Search from './components/Pages/PageSearch';
@@ -18,7 +18,7 @@ function App() {
             <Search />
           </Route>
 
-          <Route path="/">
+          <Route path="/gallery">
             <Gallery />
           </Route>
 

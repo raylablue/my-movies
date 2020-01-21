@@ -1,33 +1,44 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './NavBarStyles.scss';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTicketAlt } from '@fortawesome/free-solid-svg-icons';
+import SearchBar from '../../Atoms/SearchBar';
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-sm o-nav-bar__filmstrip">
 
-      <a className="navbar-brand" href="/">
+      <a className="navbar-brand" href="/gallery">
         <FontAwesomeIcon
           className="fas fa-ticket-alt"
           icon={faTicketAlt}
         />
       </a>
 
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="/">Gallery</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/fav">Favourites</Link>
-          </li>
-        </ul>
-        <form className="form-inline my-2 my-lg-0">
-          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
+      <ul className="navbar-nav mr-auto">
+        <li className="o-nav-bar__nav-item">
+          <NavLink
+            to="/gallery"
+            className="nav-link"
+            activeClassName="chosen"
+          >
+            Gallery
+          </NavLink>
+        </li>
+        <li className="o-nav-bar__nav-item">
+          <NavLink
+            to="/fav"
+            className="nav-link"
+            activeClassName="chosen"
+          >
+            Favourites
+          </NavLink>
+        </li>
+      </ul>
+
+      <SearchBar />
+
     </nav>
   );
 }

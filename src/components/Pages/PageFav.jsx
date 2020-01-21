@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from '../Organisms/NavBar/NavBar';
+import Footer from '../Organisms/Footer/Footer';
 
 function Fav() {
   return (
@@ -10,6 +11,27 @@ function Fav() {
         <br />
         Fill in later with favourite movies list.
       </p>
+      <p>content</p>
+      <br />
+      <p>content</p>
+      <br />
+      <p>content</p>
+      <br />
+      <p>content</p>
+      <br />
+      <p>content</p>
+      <br />
+      <p>content</p>
+      <br />
+      <p>content</p>
+      <br />
+      <p>content</p>
+      <br />
+      <p>content</p>
+      <br />
+      <p>content</p>
+      <br />
+      <Footer />
     </>
   );
 }
