@@ -9,10 +9,12 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-sm o-nav-bar__filmstrip">
 
-      <a className="navbar-brand" href="/gallery">
+      <a className="o-nav-bar__ticket-logo mx-4 my-1" href="/gallery">
         <FontAwesomeIcon
-          className="fas fa-ticket-alt"
+          className="fa-4x fas fa-ticket-alt"
+          data-fa-transform="shrink-10 up-5"
           icon={faTicketAlt}
+          id="ticket"
         />
       </a>
 
