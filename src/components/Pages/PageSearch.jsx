@@ -1,24 +1,23 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 import MovieListConnect from '../Molecules/MovieList';
 import { setMovies } from '../../redux/actions';
 import './GalleryStyles.scss';
 import NavBar from '../Organisms/NavBar/NavBar';
 import Footer from '../Organisms/Footer/Footer';
 
-const input = 'search';
-
-const getMovies = async () => {
-  const response = await fetch(`http://www.omdbapi.com/?s=${input}&i&apikey=44c3c47e`);
+const getMovies = async (id) => {
+  const response = await fetch(`http://www.omdbapi.com/?s=${id}&i&apikey=44c3c47e`);
   return response.json();
 };
 
-const PageSearch = ({
-  dispatch,
-}) => {
+const PageSearch = ({ dispatch }) => {
+  const { id } = useParams();
+
   useEffect(() => {
-    getMovies()
+    getMovies(id)
       .then(({ Search }) => {
         const uniqueMovieIDs = {};
         const movieFilter = Search.filter((movie) => {
@@ -34,7 +33,7 @@ const PageSearch = ({
   return (
     <>
       <NavBar />
-      <h1>{input}</h1>
+      <h1>{id}</h1>
       <MovieListConnect />
       <Footer />
     </>

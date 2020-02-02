@@ -18,7 +18,7 @@ function App() {
             <Fav />
           </Route>
 
-          <Route path="/search">
+          <Route path="/search/:id">
             <PageSearch />
           </Route>
 
