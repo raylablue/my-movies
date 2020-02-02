@@ -1,27 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 
 function SearchBar() {
+  const [searchInput, setSearchInput] = useState('');
   const history = useHistory();
 
-  function handleClick() {
-    history.push('/search');
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchInput !== '') {
+      history.push(`/search/${searchInput}`);
+    }
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchInput(e.target.value);
+  };
 
   return (
     <div>
-      <form className="form-inline my-2 my-lg-0">
+      <form
+        className="form-inline my-2 my-lg-0"
+        onSubmit={handleSubmit}
+      >
         <input
           className="form-control mr-sm-2"
           type="search"
           placeholder="Search"
           aria-label="Search"
+          value={searchInput}
+          onChange={handleSearchChange}
         />
         <button
           className="btn btn-outline-success my-2 my-sm-0"
-          type="button"
-          to="/search"
-          onClick={handleClick}
+          type="submit"
         >
           Search
         </button>

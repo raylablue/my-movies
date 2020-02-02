@@ -1,8 +1,12 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import GalleryConnect from './components/Pages/PageGallery';
-import Search from './components/Pages/PageSearch';
+import PageSearch from './components/Pages/PageSearch';
 import Fav from './components/Pages/PageFav';
 
 function App() {
@@ -15,7 +19,7 @@ function App() {
           </Route>
 
           <Route path="/search">
-            <Search />
+            <PageSearch />
           </Route>
 
           <Route path="/gallery">

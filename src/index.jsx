@@ -7,7 +7,11 @@ import './index.css';
 import App from './App';
 import movieGallery from './redux/reducers';
 
-const store = createStore(movieGallery);
+const store = createStore(
+  movieGallery,
+  // eslint-disable-next-line no-underscore-dangle
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 ReactDOM.render(
   <Provider store={store}>

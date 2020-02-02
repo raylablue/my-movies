@@ -18,13 +18,21 @@ const Gallery = ({
   useEffect(() => {
     getMovies()
       .then(({ Search }) => {
-        dispatch(setMovies(Search));
+        const uniqueMovieIDs = {};
+        const movieFilter = Search.filter((movie) => {
+          if (uniqueMovieIDs[movie.imdbID]) return false;
+          uniqueMovieIDs[movie.imdbID] = true;
+          return true;
+        });
+
+        dispatch(setMovies(movieFilter));
       });
   }, [dispatch]);
 
   return (
     <>
       <NavBar />
+      <h1>Movies</h1>
       <MovieListConnect />
       <Footer />
     </>
