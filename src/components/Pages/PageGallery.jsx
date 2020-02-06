@@ -12,9 +12,7 @@ const getMovies = async () => {
   return response.json();
 };
 
-const Gallery = ({
-  dispatch,
-}) => {
+const Gallery = ({ dispatch }) => {
   useEffect(() => {
     getMovies()
       .then(({ Search }) => {

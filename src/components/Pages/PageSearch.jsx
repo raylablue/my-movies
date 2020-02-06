@@ -19,21 +19,29 @@ const PageSearch = ({ dispatch }) => {
   useEffect(() => {
     getMovies(id)
       .then(({ Search }) => {
-        const uniqueMovieIDs = {};
-        const movieFilter = Search.filter((movie) => {
-          if (uniqueMovieIDs[movie.imdbID]) return false;
-          uniqueMovieIDs[movie.imdbID] = true;
-          return true;
-        });
-
-        dispatch(setMovies(movieFilter));
+        if (Search !== undefined) {
+          const uniqueMovieIDs = {};
+          const movieFilter = Search.filter((movie) => {
+            if (uniqueMovieIDs[movie.imdbID]) return false;
+            uniqueMovieIDs[movie.imdbID] = true;
+            return true;
+          });
+          dispatch(setMovies(movieFilter));
+        } else {
+          dispatch(setMovies([]));
+        }
       });
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <>
       <NavBar />
-      <h1>{id}</h1>
+      <h1>
+        Search:
+        &quot;
+        {id}
+        &quot;
+      </h1>
       <MovieListConnect />
       <Footer />
     </>

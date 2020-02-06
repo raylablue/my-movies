@@ -7,12 +7,18 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const MovieList = ({ movies }) => (
   <div>
+    {movies.length > 0 ? (
+      <h2>The titles below were found related to your search</h2>
+    ) : (
+      <h2>Sorry, we did not find any movies with that search term. Please try again. </h2>
+    )}
     <div className="container-fluid">
       <div className="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center">
 
         {movies.map((movie) => (
           <div
             className="my-4 mx-3 p-1 m-movielist__card"
+            key={movie.imdbID}
           >
             <div className="m-movielist__poster-container">
               <img

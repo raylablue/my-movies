@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 
 function SearchBar() {
@@ -9,12 +9,17 @@ function SearchBar() {
     e.preventDefault();
     if (searchInput !== '') {
       history.push(`/search/${searchInput}`);
+      // window.location.reload();
     }
   };
 
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
   };
+
+  useEffect(() => {
+
+  });
 
   return (
     <div>
@@ -27,6 +32,7 @@ function SearchBar() {
           type="search"
           placeholder="Search"
           aria-label="Search"
+          minLength="3"
           value={searchInput}
           onChange={handleSearchChange}
         />

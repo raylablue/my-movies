@@ -22,6 +22,10 @@ function App() {
             <PageSearch />
           </Route>
 
+          <Route path="/">
+            <GalleryConnect />
+          </Route>
+
           <Route path="/gallery">
             <GalleryConnect />
           </Route>
