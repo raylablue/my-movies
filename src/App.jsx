@@ -8,6 +8,8 @@ import {
 import GalleryConnect from './components/Pages/PageGallery';
 import PageSearch from './components/Pages/PageSearch';
 import Fav from './components/Pages/PageFav';
+// eslint-disable-next-line import/extensions
+import DetailsConnect from './components/Pages/PageDetails.jsx';
 
 function App() {
   return (
@@ -20,6 +22,10 @@ function App() {
 
           <Route path="/search/:id">
             <PageSearch />
+          </Route>
+
+          <Route path="/details">
+            <DetailsConnect />
           </Route>
 
           <Route path="/">

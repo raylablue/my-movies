@@ -8,7 +8,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 const MovieList = ({ movies }) => (
   <div>
     {movies.length > 0 ? (
-      <h2>The titles below were found related to your search</h2>
+      <h2>Check out these awesome movies!</h2>
     ) : (
       <h2>Sorry, we did not find any movies with that search term. Please try again. </h2>
     )}

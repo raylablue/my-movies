@@ -37,6 +37,15 @@ function NavBar() {
             Favourites
           </NavLink>
         </li>
+        <li className="o-nav-bar__nav-item">
+          <NavLink
+            to="/details"
+            className="nav-link"
+            activeClassName="chosen"
+          >
+            IndividualTest
+          </NavLink>
+        </li>
       </ul>
 
       <SearchBar />
