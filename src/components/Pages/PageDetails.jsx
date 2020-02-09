@@ -11,43 +11,30 @@ const getMovies = async () => {
 };
 
 const Details = ({ dispatch }) => {
-  const [title, setTitle] = useState();
-  const [director, setDirector] = useState();
-  const [poster, setPoster] = useState();
-  const [genre, setGenre] = useState();
-  const [released, setReleased] = useState();
+  // const { id } = useParams();
+  const [imdbid, setImdbid] = useState();
 
 
   useEffect(() => {
     getMovies()
-      .then(({
-        Title, Director, Poster, Genre, Released,
-      }) => {
-        dispatch(setMovies(Title, Director, Poster, Genre, Released));
-        setTitle(Title);
-        setDirector(Director);
-        setPoster(Poster);
-        setGenre(Genre);
-        setReleased(Released);
+      // eslint-disable-next-line consistent-return
+      .then(({ imdbID }) => {
+        try {
+          dispatch(setMovies(imdbID));
+          setImdbid(imdbID);
+        } catch (error) {
+          return error;
+          // console.log(error);
+        }
       });
   }, [dispatch]);
 
   return (
     <>
       <NavBar />
-      <h1>{title}</h1>
-      <p>
-        {director}
-        |
-        {genre}
-        |
-        {released}
-      </p>
-      <img
-        src={poster}
-        alt="movie poster"
-      />
-
+      <div className="ml-4 my-3 container-fluid">
+        <h2>{imdbid}</h2>
+      </div>
       <Footer />
     </>
   );

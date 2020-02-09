@@ -24,7 +24,7 @@ function App() {
             <PageSearch />
           </Route>
 
-          <Route path="/details">
+          <Route path="/details/:id">
             <DetailsConnect />
           </Route>
 

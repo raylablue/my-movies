@@ -26,7 +26,6 @@ const Gallery = ({ dispatch }) => {
         dispatch(setMovies(movieFilter));
       });
   }, [dispatch]);
-
   return (
     <>
       <NavBar />
