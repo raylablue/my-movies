@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router';
 import NavBar from '../Organisms/NavBar/NavBar';
 import Footer from '../Organisms/Footer/Footer';
 import { setMovies } from '../../redux/actions';
 
-const getMovies = async () => {
-  const response = await fetch('http://www.omdbapi.com/?i=tt3896198&apikey=44c3c47e');
+const getMovies = async (id) => {
+  const response = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=44c3c47e`);
   return response.json();
 };
 
 const Details = ({ dispatch }) => {
-  // const { id } = useParams();
+  const { id } = useParams();
   const [imdbid, setImdbid] = useState();
 
 
   useEffect(() => {
-    getMovies()
+    getMovies(id)
       // eslint-disable-next-line consistent-return
       .then(({ imdbID }) => {
         try {
@@ -27,7 +28,7 @@ const Details = ({ dispatch }) => {
           // console.log(error);
         }
       });
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <>
