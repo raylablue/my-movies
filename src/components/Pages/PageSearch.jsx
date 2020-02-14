@@ -5,8 +5,7 @@ import { useParams } from 'react-router-dom';
 import MovieListConnect from '../Molecules/MovieList';
 import { setMovies } from '../../redux/actions';
 import './GalleryStyles.scss';
-import NavBar from '../Organisms/NavBar/NavBar';
-import Footer from '../Organisms/Footer/Footer';
+import TemplateDefault from '../Templates/TemplateDefault';
 
 const getMovies = async (id) => {
   const response = await fetch(`http://www.omdbapi.com/?s=${id}&i&apikey=44c3c47e`);
@@ -34,8 +33,7 @@ const PageSearch = ({ dispatch }) => {
   }, [dispatch, id]);
 
   return (
-    <>
-      <NavBar />
+    <TemplateDefault>
       <h1>
         Search:
         &quot;
@@ -43,8 +41,7 @@ const PageSearch = ({ dispatch }) => {
         &quot;
       </h1>
       <MovieListConnect />
-      <Footer />
-    </>
+    </TemplateDefault>
   );
 };
 

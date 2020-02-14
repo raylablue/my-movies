@@ -1,11 +1,9 @@
 import React from 'react';
-import NavBar from '../Organisms/NavBar/NavBar';
-import Footer from '../Organisms/Footer/Footer';
+import TemplateDefault from '../Templates/TemplateDefault';
 
 function Fav() {
   return (
-    <>
-      <NavBar />
+    <TemplateDefault>
       <p>
         This is the main Favourites page (heart).
         <br />
@@ -31,8 +29,7 @@ function Fav() {
       <br />
       <p>content</p>
       <br />
-      <Footer />
-    </>
+    </TemplateDefault>
   );
 }
 

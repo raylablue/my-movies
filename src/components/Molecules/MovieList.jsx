@@ -2,9 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './MovieList.scss';
-import { Link } from 'react-router-dom';
-import MovieResultConnect from '../Atoms/MovieResult';
+import MovieResult from '../Atoms/MovieResult';
 
+function printMovies(movies) {
+  return movies.map((movie) => (
+    <MovieResult
+      movie={movie}
+      key={movie.imdbID}
+    />
+  ));
+}
 
 const MovieList = ({ movies }) => (
   <div>
@@ -13,17 +20,10 @@ const MovieList = ({ movies }) => (
     ) : (
       <h2>Sorry, we did not find any movies with that search term. Please try again. </h2>
     )}
-    {movies.map((movie) => (
-      <MovieResultConnect
-        movie={movie}
-        key={movie.imdbID}
-      >
-        <Link
-          to="./details/movie.imdbID"
-        />
 
-      </MovieResultConnect>
-    ))}
+    <div className="row">
+      {printMovies(movies)}
+    </div>
   </div>
 );
 

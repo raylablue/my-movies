@@ -7,7 +7,7 @@ import SearchBar from '../../Atoms/SearchBar';
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-sm o-nav-bar__filmstrip">
+    <nav className="navbar navbar-expand-sm o-nav-bar__filmstrip mb-4">
 
       <a className="o-nav-bar__ticket-logo mx-4 my-1" href="/">
         <FontAwesomeIcon
@@ -35,15 +35,6 @@ function NavBar() {
             activeClassName="chosen"
           >
             Favourites
-          </NavLink>
-        </li>
-        <li className="o-nav-bar__nav-item">
-          <NavLink
-            to="/details"
-            className="nav-link"
-            activeClassName="chosen"
-          >
-            IndividualTest
           </NavLink>
         </li>
       </ul>

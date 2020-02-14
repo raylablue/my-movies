@@ -2,15 +2,13 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const MovieResult = ({ movie }) => (
-
-  <div className="container-fluid">
-    <div className="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center">
+  <div className="col-sm-12 col-md-6 col-lg-4">
+    <Link to={`/details/${movie.imdbID}`}>
       <div
-        className="my-4 mx-3 p-1 m-movielist__card"
-        key={movie.imdbID}
+        className="mb-4 m-movielist__card"
       >
         <div
           className="m-movielist__poster-container"
@@ -38,9 +36,8 @@ const MovieResult = ({ movie }) => (
         </div>
 
       </div>
-    </div>
+    </Link>
   </div>
-
 );
 
 MovieResult.defaultProps = {
@@ -52,12 +49,4 @@ MovieResult.propTypes = {
   movie: PropTypes.object,
 };
 
-const mapStateToProps = (state) => ({
-  movies: state.movies,
-});
-
-const MovieResultConnect = connect(
-  mapStateToProps,
-)(MovieResult);
-
-export default MovieResultConnect;
+export default MovieResult;

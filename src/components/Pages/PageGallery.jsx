@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import MovieListConnect from '../Molecules/MovieList';
 import { setMovies } from '../../redux/actions';
 import './GalleryStyles.scss';
-import NavBar from '../Organisms/NavBar/NavBar';
-import Footer from '../Organisms/Footer/Footer';
+import TemplateDefault from '../Templates/TemplateDefault';
 
 const getMovies = async () => {
   const response = await fetch('http://www.omdbapi.com/?s=movies&i&apikey=44c3c47e');
@@ -27,12 +26,12 @@ const Gallery = ({ dispatch }) => {
       });
   }, [dispatch]);
   return (
-    <>
-      <NavBar />
-      <h1>Movies</h1>
-      <MovieListConnect />
-      <Footer />
-    </>
+    <TemplateDefault>
+      <div className="container">
+        <h1>Movies</h1>
+        <MovieListConnect />
+      </div>
+    </TemplateDefault>
   );
 };
 
