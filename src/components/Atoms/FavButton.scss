@@ -1,0 +1,15 @@
+.a-fav-button {
+  &__heart {
+    color: gray;
+
+    &:hover {
+      color: rgba(#D17E19, 0.3);
+    }
+  }
+
+  &.-active {
+    .a-fav-button__heart {
+      color: #D17E19;
+    }
+  }
+}
