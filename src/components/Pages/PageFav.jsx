@@ -6,11 +6,6 @@ function Fav() {
   return (
     <TemplateDefault>
       <FavMovies />
-      <p>
-        This is the main Favourites page (heart).
-        <br />
-        Fill in later with favourite movies list.
-      </p>
 
     </TemplateDefault>
   );

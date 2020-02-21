@@ -17,7 +17,7 @@ const FavButton = ({ movie }) => {
   };
 
   useEffect(() => {
-    const initialFavMovie = localStorage.getItem(movie.imdbID) === 'true';
+    const initialFavMovie = JSON.parse(localStorage.getItem(movie.imdbID));
     setFavMovie(initialFavMovie);
     updateBtnClass(initialFavMovie);
   }, [movie.imdbID]);
@@ -25,7 +25,12 @@ const FavButton = ({ movie }) => {
   const handleClick = () => {
     const newMovieValue = !favMovie;
     setFavMovie(newMovieValue);
-    localStorage.setItem(movie.imdbID, newMovieValue);
+
+    if (newMovieValue) {
+      localStorage.setItem(movie.imdbID, JSON.stringify(movie));
+    } else {
+      localStorage.removeItem(movie.imdbID);
+    }
     updateBtnClass(newMovieValue);
   };
 
