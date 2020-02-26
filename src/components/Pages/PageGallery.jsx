@@ -1,46 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import MovieListConnect from '../Molecules/MovieList';
 import { setMovies } from '../../redux/actions';
 import './GalleryStyles.scss';
 import TemplateDefault from '../Templates/TemplateDefault';
 import LoadingAnim from '../Atoms/LoadingAnim';
 
-const getMovies = async () => {
-  const response = await fetch('http://www.omdbapi.com/?s=movies&i&apikey=44c3c47e');
-  return response.json();
-};
-
-const Gallery = ({ dispatch }) => {
+const Gallery = () => {
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
-
-  const updateLoading = (isActive) => {
-    if (isActive) {
-      setIsLoading(true);
-      return;
-    }
-    setIsLoading(false);
-  };
-
+  const [message, setMessage] = useState();
 
   useEffect(() => {
-    updateLoading(isLoading);
+    const getMovies = async () => {
+      setIsLoading(true);
 
-    getMovies()
-      .then(({ Search }) => {
+      const response = await fetch('http://www.omdbapi.com/?s=movies&i&apikey=44c3c47e');
+      const { Search } = await response.json();
+      setIsLoading(false);
+
+      if (Search) {
         const uniqueMovieIDs = {};
         const movieFilter = Search.filter((movie) => {
           if (uniqueMovieIDs[movie.imdbID]) return false;
           uniqueMovieIDs[movie.imdbID] = true;
           return true;
         });
+
         dispatch(setMovies(movieFilter));
-      });
-    setIsLoading(false);
+        setMessage('Look at these movies, or start a search of your own');
+      } else {
+        dispatch(setMovies([]));
+        setMessage('Type something in the search bar to see realted movie titles');
+      }
+    };
+
+    getMovies();
   }, [dispatch]);
 
-  if (isLoading === true) {
+  if (isLoading) {
     return (
       <TemplateDefault>
         <LoadingAnim />
@@ -52,16 +50,11 @@ const Gallery = ({ dispatch }) => {
     <TemplateDefault>
       <div className="container">
         <h1>Movies</h1>
+        <h2>{message}</h2>
         <MovieListConnect />
       </div>
     </TemplateDefault>
   );
 };
 
-Gallery.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-};
-
-const GalleryConnect = connect()(Gallery);
-
-export default GalleryConnect;
+export default Gallery;
