@@ -6,7 +6,6 @@ function Fav() {
   return (
     <TemplateDefault>
       <FavMovies />
-
     </TemplateDefault>
   );
 }

@@ -4,11 +4,12 @@ import './FooterStyles.scss';
 function Footer() {
   return (
     <footer
-      id="sticky-footer"
-      className="py-5 bg-dark text-white-50 "
+      className="py-3 bg-dark text-white-50 o-footer"
     >
       <div className="container text-center">
-        <small>Copyright &copy; Your Website</small>
+        <small>This website is powered by the</small>
+        <br />
+        <a href="http://www.omdbapi.com/">omdbapi</a>
       </div>
     </footer>
   );

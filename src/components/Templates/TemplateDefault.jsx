@@ -5,10 +5,12 @@ import Footer from '../Organisms/Footer/Footer';
 
 const TemplateDefault = ({ children }) => (
   <>
-    <NavBar />
+    <div className="content">
+      <NavBar />
 
-    <div className="container t-template-default__content py-5">
-      {children}
+      <div className="container t-template-default__content py-5">
+        {children}
+      </div>
     </div>
 
     <Footer />
