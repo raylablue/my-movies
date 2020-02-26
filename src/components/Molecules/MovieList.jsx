@@ -15,12 +15,6 @@ function printMovies(movies) {
 
 const MovieList = ({ movies }) => (
   <div>
-    {movies.length > 0 ? (
-      <h2>Check out these awesome movies!</h2>
-    ) : (
-      <h2>Sorry, we did not find any movies with that search term. Please try again. </h2>
-    )}
-
     <div className="row">
       {printMovies(movies)}
     </div>

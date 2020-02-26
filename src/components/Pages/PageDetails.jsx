@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import TemplateDefault from '../Templates/TemplateDefault';
 import MovieDetails from '../Molecules/MovieDetails';
+import LoadingAnim from '../Atoms/LoadingAnim';
 
 const Details = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const Details = () => {
   if (!movie) {
     return (
       <TemplateDefault>
-        <p>Loading...</p>
+        <LoadingAnim />
       </TemplateDefault>
     );
   }
