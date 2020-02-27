@@ -40,9 +40,7 @@ function NavBar() {
       <a className="o-nav-bar__ticket-logo mx-4 my-1" href="/">
         <FontAwesomeIcon
           className="fa-4x fas fa-ticket-alt"
-          data-fa-transform="shrink-10 up-5"
           icon={faTicketAlt}
-          id="ticket"
         />
       </a>
       <button
@@ -56,14 +54,15 @@ function NavBar() {
         onClick={toggleClick}
       >
         <FontAwesomeIcon
-          className="fa-2x fas fa-bars"
+          className="fa-2x fas fa-bars o-nav-bar__bars"
           icon={faBars}
-          id="ticket"
         />
       </button>
 
-      <div className={navClass} id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+      <div
+        className={`${navClass} ml-4 mr-5 pr-5`}
+      >
+        <ul className="navbar-nav mr-auto o-nav-bar__nav-width">
           <li className="o-nav-bar__nav-item">
             <NavLink
               to="/gallery"

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './MovieResult.scss';
 import FavButton from './FavButton';
 
 const MovieResult = ({ movie }) => {
@@ -29,9 +30,11 @@ const MovieResult = ({ movie }) => {
             {movie.Title}
           </h4>
         </Link>
-        <FavButton
-          movie={movie}
-        />
+        <div className="a-movie-result__content pb-3">
+          <FavButton
+            movie={movie}
+          />
+        </div>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const Gallery = () => {
     const getMovies = async () => {
       setIsLoading(true);
 
-      const response = await fetch('http://www.omdbapi.com/?s=movies&i&apikey=44c3c47e');
+      const response = await fetch('https://www.omdbapi.com/?s=movies&i&apikey=44c3c47e');
       const { Search } = await response.json();
       setIsLoading(false);
 

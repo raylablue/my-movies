@@ -1,9 +1,12 @@
 import React from 'react';
+import './MovieDetails.scss';
 import PropTypes from 'prop-types';
 
 const MovieDetails = ({ movie }) => (
   <>
-    <h2>{movie.Title}</h2>
+    <h2 className="m-movie-details__title">
+      {movie.Title}
+    </h2>
     <p>
       {movie.Rated}
       &nbsp;|&nbsp;

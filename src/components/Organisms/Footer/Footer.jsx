@@ -9,7 +9,13 @@ function Footer() {
       <div className="container text-center">
         <small>This website is powered by the</small>
         <br />
-        <a href="http://www.omdbapi.com/">omdbapi</a>
+        <a
+          href="http://www.omdbapi.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          omdbapi
+        </a>
       </div>
     </footer>
   );
