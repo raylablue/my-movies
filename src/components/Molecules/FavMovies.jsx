@@ -9,9 +9,9 @@ const FavMovies = () => {
       <div>
         <h1>Favourite Movies</h1>
         <p>
-            Looks like you don&lsquo;t have any favourite movies yet.
-            Go spread some love and come back here to see all your favourite movies
-            in one place.
+          Looks like you don&lsquo;t have any favourite movies yet.
+          Go spread some love and come back here to see all your favourite movies
+          in one place.
         </p>
       </div>
     );
