@@ -14,7 +14,7 @@ import DetailsConnect from './components/Pages/PageDetails.jsx';
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/my-movies">
         <Switch>
           <Route path="/fav">
             <Fav />
@@ -28,11 +28,11 @@ function App() {
             <DetailsConnect />
           </Route>
 
-          <Route path="/">
+          <Route path="/gallery">
             <GalleryConnect />
           </Route>
 
-          <Route path="/gallery">
+          <Route path="/">
             <GalleryConnect />
           </Route>
 

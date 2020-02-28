@@ -1,6 +1,7 @@
 import React from 'react';
 import './MovieDetails.scss';
 import PropTypes from 'prop-types';
+import FavButton from '../Atoms/FavButton';
 
 const MovieDetails = ({ movie }) => (
   <>
@@ -9,18 +10,19 @@ const MovieDetails = ({ movie }) => (
     </h2>
     <p>
       {movie.Rated}
-      &nbsp;|&nbsp;
+        &nbsp;|&nbsp;
       {movie.Runtime}
       &nbsp;|&nbsp;
       IMDB Rating: &nbsp;
       {movie.imdbRating}
-      &nbsp;|&nbsp;
+        &nbsp;|&nbsp;
       {movie.Released}
     </p>
     <img
       src={movie.Poster}
       alt="movie poster"
     />
+    <FavButton />
     <p>
       {movie.Genre}
       <br />

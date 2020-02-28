@@ -53,7 +53,7 @@ const FavButton = ({ movie }) => {
 };
 
 FavButton.defaultProps = {
-  movie: [],
+  movie: {},
 };
 
 FavButton.propTypes = {

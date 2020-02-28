@@ -37,12 +37,15 @@ function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-lg o-nav-bar__filmstrip mb-4">
-      <a className="o-nav-bar__ticket-logo mx-4 my-1" href="/">
+      <NavLink
+        to="/"
+        className="o-nav-bar__ticket-logo mx-4 my-1"
+      >
         <FontAwesomeIcon
           className="fa-4x fas fa-ticket-alt"
           icon={faTicketAlt}
         />
-      </a>
+      </NavLink>
       <button
         className={toggleClass}
         type="button"

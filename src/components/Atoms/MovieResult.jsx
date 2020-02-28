@@ -41,7 +41,7 @@ const MovieResult = ({ movie }) => {
 };
 
 MovieResult.defaultProps = {
-  movie: [],
+  movie: {},
 };
 
 MovieResult.propTypes = {
