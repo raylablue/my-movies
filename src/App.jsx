@@ -14,7 +14,7 @@ import DetailsConnect from './components/Pages/PageDetails.jsx';
 function App() {
   return (
     <>
-      <Router basename="/my-movies">
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path="/fav">
             <Fav />
