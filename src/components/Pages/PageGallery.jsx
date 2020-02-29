@@ -28,7 +28,7 @@ const Gallery = () => {
         });
 
         dispatch(setMovies(movieFilter));
-        setMessage('Look at these movies, or start a search of your own');
+        setMessage('Start a search to see more movies');
       } else {
         dispatch(setMovies([]));
         setMessage('Type something in the search bar to see realted movie titles');
@@ -50,7 +50,7 @@ const Gallery = () => {
     <TemplateDefault>
       <div className="container">
         <h1>Movies</h1>
-        <h2>{message}</h2>
+        <h3>{message}</h3>
         <MovieListConnect />
       </div>
     </TemplateDefault>

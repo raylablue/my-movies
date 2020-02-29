@@ -13,24 +13,24 @@ const MovieResult = ({ movie }) => {
   return (
     <div className="col-sm-12 col-md-6 col-lg-4">
       <div
-        className="mb-4 m-movielist__card"
+        className="mb-4 a-movieresult__card border border-dark"
       >
         <Link to={`/details/${movie.imdbID}`}>
           <div
-            className="m-movielist__poster-container"
+            className="a-movieresult__poster-container"
           >
             <img
               src={movie.Poster}
               alt="Movie Poster"
-              className="m-movielist__poster"
+              className="a-movieresult__poster"
               onError={addDefaultSrc}
             />
           </div>
-          <h4 className="m-movielist__title p-2">
+          <h4 className="a-movieresult__title text-center text-truncate display-block p-2">
             {movie.Title}
           </h4>
         </Link>
-        <div className="a-movie-result__content pb-3">
+        <div className="text-center pb-2">
           <FavButton
             movie={movie}
           />

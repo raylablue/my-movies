@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './MovieList.scss';
+import '../Atoms/MovieResult.scss';
 import MovieResult from '../Atoms/MovieResult';
 
 function printMovies(movies) {

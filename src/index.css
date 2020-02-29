@@ -10,7 +10,7 @@ html, body, #root {
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Montserrat', 'Limelight',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -24,3 +24,13 @@ code {
 .content {
   flex: 1 0 auto;
 }
+
+h1, h2 {
+  font-family: Limelight;
+  color: #D17E19;
+}
+
+h3, h4, p, small, form, a {
+  font-family: Montserrat;
+}
+

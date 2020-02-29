@@ -36,13 +36,13 @@ function NavBar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg o-nav-bar__filmstrip mb-4">
+    <nav className="navbar navbar-expand-lg o-nav-bar__filmstrip">
       <NavLink
         to="/"
-        className="o-nav-bar__ticket-logo mx-4 my-1"
+        className="o-nav-bar__ticket-logo"
       >
         <FontAwesomeIcon
-          className="fa-4x fas fa-ticket-alt"
+          className="fa-4x fas fa-ticket-alt mr-4"
           icon={faTicketAlt}
         />
       </NavLink>
@@ -63,7 +63,7 @@ function NavBar() {
       </button>
 
       <div
-        className={`${navClass} ml-4 mr-5 pr-5`}
+        className={navClass}
       >
         <ul className="navbar-nav mr-auto o-nav-bar__nav-width">
           <li className="o-nav-bar__nav-item">

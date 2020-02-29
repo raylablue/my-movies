@@ -8,7 +8,7 @@ function Footer() {
     >
       <div className="container-fluid text-center">
         <div className="row mx-5">
-          <div className="col-sm-12 col-md-6 col-lg-3 offset-lg-3 offset-md-1 mb-sm-4">
+          <div className="col-sm-12 col-md-6 col-lg-3 offset-lg-3 offset-md-1 my-2">
             <small>This website is powered by the</small>
             <br />
             <a
@@ -19,10 +19,12 @@ function Footer() {
               omdbapi
             </a>
           </div>
-          <div className="col col-lg-3">
+          <div className="col col-lg-3 my-2">
             <a
               className="btn btn-outline-primary"
               href="https://github.com/rachel-blue/my-movies"
+              target="_blank"
+              rel="noopener noreferrer"
               role="button"
             >
               View the Source Code

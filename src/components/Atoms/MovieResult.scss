@@ -1,5 +1,20 @@
-.a-movie-result {
-  &__content {
-    text-align: center;
+.a-movieresult {
+  &__card{
+    align-content: center;
+    background-color: #23272b;
+    border: #D17E19;
+  }
+  &__poster-container{
+    height: 350px;
+  }
+  &__poster{
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &__title{
+    width: 100%;
+    height: 100%;
   }
 }
