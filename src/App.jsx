@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom';
@@ -14,7 +14,7 @@ import DetailsConnect from './components/Pages/PageDetails.jsx';
 function App() {
   return (
     <>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <Switch>
           <Route path="/fav">
             <Fav />
@@ -35,9 +35,7 @@ function App() {
           <Route path="/">
             <GalleryConnect />
           </Route>
-
         </Switch>
-
       </Router>
     </>
   );
