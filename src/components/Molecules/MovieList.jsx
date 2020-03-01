@@ -21,12 +21,10 @@ const MovieList = ({ movies }) => (
   </div>
 );
 
-MovieList.defaultProps = {
-  movies: [],
-};
-
 MovieList.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.object),
+  movies: PropTypes.arrayOf(PropTypes.shape({
+    imdbID: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 const mapStateToProps = (state) => ({

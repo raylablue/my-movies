@@ -40,13 +40,12 @@ const MovieResult = ({ movie }) => {
   );
 };
 
-MovieResult.defaultProps = {
-  movie: {},
-};
-
 MovieResult.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  movie: PropTypes.object,
+  movie: PropTypes.shape({
+    imdbID: PropTypes.string.isRequired,
+    Poster: PropTypes.string.isRequired,
+    Title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default MovieResult;

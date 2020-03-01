@@ -12,12 +12,12 @@ const MovieDetails = ({ movie }) => (
         </h2>
         <p>
           {movie.Rated}
-          &nbsp;|&nbsp;
+            &nbsp;|&nbsp;
           {movie.Runtime}
           &nbsp;|&nbsp;
           IMDB Rating: &nbsp;
           {movie.imdbRating}
-          &nbsp;|&nbsp;
+            &nbsp;|&nbsp;
           {movie.Released}
         </p>
         <img
@@ -30,7 +30,9 @@ const MovieDetails = ({ movie }) => (
         </p>
       </div>
       <div className="col col-lg-6 pb-3 p-4 m-movie-details__filmstrip">
-        <FavButton />
+        <FavButton
+          movie={movie}
+        />
         <p className="pt-4">
           {movie.Plot}
           <br />
@@ -51,13 +53,21 @@ const MovieDetails = ({ movie }) => (
   </>
 );
 
-MovieDetails.defaultProps = {
-  movie: [],
+MovieDetails.propTypes = {
+  movie: PropTypes.shape({
+    Title: PropTypes.string.isRequired,
+    Rated: PropTypes.string.isRequired,
+    Runtime: PropTypes.string.isRequired,
+    imdbRating: PropTypes.string.isRequired,
+    Released: PropTypes.string.isRequired,
+    Poster: PropTypes.string.isRequired,
+    Genre: PropTypes.string.isRequired,
+    Plot: PropTypes.string.isRequired,
+    Director: PropTypes.string.isRequired,
+    Writer: PropTypes.string.isRequired,
+    Actors: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
-MovieDetails.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  movie: PropTypes.object,
-};
 
 export default MovieDetails;

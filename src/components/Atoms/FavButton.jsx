@@ -5,7 +5,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import './FavButton.scss';
 
 const FavButton = ({ movie }) => {
-  const [favMovie, setFavMovie] = useState(false);
+  const [favMovie, setFavMovie] = useState();
   const [btnClass, setBtnClass] = useState('');
 
   const updateBtnClass = (isActive) => {
@@ -52,13 +52,10 @@ const FavButton = ({ movie }) => {
   );
 };
 
-FavButton.defaultProps = {
-  movie: {},
-};
-
 FavButton.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  movie: PropTypes.object,
+  movie: PropTypes.shape({
+    imdbID: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default FavButton;
