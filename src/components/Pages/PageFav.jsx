@@ -3,15 +3,21 @@ import TemplateDefault from '../Templates/TemplateDefault';
 import MovieResult from '../Atoms/MovieResult';
 
 const Fav = () => {
-  const allStorage = Object.values(localStorage);
-  // filter array that comes back from const favMovieList and remove anything undefined
-  const favMovieList = allStorage.filter((favMovieValue) => {
-    if (favMovieValue && typeof JSON.parse(favMovieValue) === 'object') {
-      return true;
-    }
+  const favMovieList = Object.values(localStorage)
+    .map((value) => {
+      try {
+        return JSON.parse(value);
+      } catch (e) {
+        return null;
+      }
+    })
+    .filter((movie) => {
+      if (movie && typeof movie === 'object' && movie.imdbID) {
+        return true;
+      }
 
-    return false;
-  });
+      return false;
+    });
 
   if (localStorage.length === 0) {
     return (
@@ -31,8 +37,8 @@ const Fav = () => {
       <div className="row">
         {favMovieList.map((favMovie) => (
           <MovieResult
-            movie={JSON.parse(favMovie)}
-            key={JSON.parse(favMovie).imdbID}
+            movie={favMovie}
+            key={favMovie.imdbID}
           />
         ))}
       </div>
