@@ -10,12 +10,6 @@ const MovieResult = ({ movie }) => {
     e.target.src = require('./poster-placeholder.jpg');
   };
 
-  // if (movie.imdbID === undefined) {
-  //   return (
-  //     <small />
-  //   );
-  // }
-
   return (
     <div className="col-sm-12 col-md-6 col-lg-4">
       <div
