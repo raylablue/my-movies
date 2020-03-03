@@ -19,7 +19,7 @@ const Fav = () => {
       return false;
     });
 
-  if (localStorage.length === 0) {
+  if (favMovieList.length === 0) {
     return (
       <TemplateDefault>
         <h1>Favourite Movies</h1>

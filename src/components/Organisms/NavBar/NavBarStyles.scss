@@ -37,7 +37,7 @@
     background-size: calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), 100% calc(100% - var(--size) * 3);
     background-repeat: repeat-x;
     background-position: 0 var(--size), top left, 0 calc(100% - var(--size)), bottom left, 0 var(--size);
-    padding: calc(var(--size) * 3) calc(var(--size) * 2.5);
+    padding: calc(var(--size) * 3) calc(var(--size) * 3);
     box-sizing: border-box;
   }
 

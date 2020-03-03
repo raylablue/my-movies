@@ -36,18 +36,18 @@ function NavBar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg o-nav-bar__filmstrip">
+    <nav className="navbar navbar-expand-lg o-nav-bar__filmstrip px-2">
       <NavLink
         to="/"
         className="o-nav-bar__ticket-logo"
       >
         <FontAwesomeIcon
-          className="fa-4x fas fa-ticket-alt mr-4"
+          className="fa-5x fas fa-ticket-alt mr-4 py-0 pl-1"
           icon={faTicketAlt}
         />
       </NavLink>
       <button
-        className={toggleClass}
+        className={`${toggleClass} p-1`}
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -57,7 +57,7 @@ function NavBar() {
         onClick={toggleClick}
       >
         <FontAwesomeIcon
-          className="fa-2x fas fa-bars o-nav-bar__bars"
+          className="fa-3x fas fa-bars o-nav-bar__bars"
           icon={faBars}
         />
       </button>
@@ -65,7 +65,7 @@ function NavBar() {
       <div
         className={navClass}
       >
-        <ul className="navbar-nav mr-auto o-nav-bar__nav-width">
+        <ul className="navbar-nav mr-auto o-nav-bar__nav-width pl-1">
           <li className="o-nav-bar__nav-item">
             <NavLink
               to="/gallery"

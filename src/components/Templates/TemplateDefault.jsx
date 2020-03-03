@@ -8,7 +8,7 @@ const TemplateDefault = ({ children }) => (
     <div className="content">
       <NavBar />
 
-      <div className="container t-template-default__content py-5">
+      <div className="container t-template-default__content p-0 py-5">
         {children}
       </div>
     </div>
